@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Szymar - Zamów Piosenkę</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="music-notes note1">♪</div>
+    <div class="music-notes note2">♫</div>
+    <div class="music-notes note3">♪</div>
+
+    <div class="container">
+        <div class="logo-section">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='90' fill='none' stroke='%23d4af37' stroke-width='2'/%3E%3Cpath d='M40 80 Q60 70 80 80 L90 90 Q95 95 100 90 L110 80 Q130 70 150 80' fill='none' stroke='%23d4af37' stroke-width='2'/%3E%3Ccircle cx='50' cy='90' r='4' fill='%23d4af37'/%3E%3Ccircle cx='85' cy='95' r='4' fill='%23d4af37'/%3E%3Ccircle cx='115' cy='95' r='4' fill='%23d4af37'/%3E%3Ccircle cx='145' cy='90' r='4' fill='%23d4af37'/%3E%3Ctext x='100' y='130' font-family='Georgia, serif' font-size='80' fill='%23d4af37' text-anchor='middle' font-weight='300'%3EDJ%3C/text%3E%3C/svg%3E" alt="DJ Szymar" class="logo">
+            <div class="logo-text">DJ & Wodzirej</div>
+            <div class="subtitle">Szymar</div>
+            <div class="divider"></div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">Zamów Piosenkę</h2>
+            
+            <div id="successMessage" style="display: none;" class="success-message">
+                ✓ Twoje zamówienie zostało dodane do kolejki
+            </div>
+
+            <form id="songRequestForm">
+                <div class="form-group">
+                    <label for="songTitle">♫ Tytuł Utworu</label>
+                    <input 
+                        type="text" 
+                        id="songTitle" 
+                        name="songTitle" 
+                        placeholder="np. Dancing Queen"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="artist">♪ Wykonawca</label>
+                    <input 
+                        type="text" 
+                        id="artist" 
+                        name="artist" 
+                        placeholder="np. ABBA"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="requesterName">Twoje Imię (opcjonalnie)</label>
+                    <input 
+                        type="text" 
+                        id="requesterName" 
+                        name="requesterName" 
+                        placeholder="np. Anna"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Dedykacja lub Uwagi (opcjonalnie)</label>
+                    <textarea 
+                        id="notes" 
+                        name="notes" 
+                        placeholder="np. Na urodziny Kasi!"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="button">
+                    Zamów Utwór
+                </button>
+            </form>
+
+            <div class="note">
+                DJ Szymar dokłada wszelkich starań, aby spełnić Twoje muzyczne życzenia. Kolejność utworów może się różnić w zależności od atmosfery imprezy.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="requests-header">
+                <h2 class="requests-title">Kolejka Utworów</h2>
+                <span class="queue-count" id="queueCount">0</span>
+            </div>
+            
+            <div id="requestsList">
+                <div class="empty-queue">
+                    <div class="empty-queue-icon">♪</div>
+                    <p>Kolejka jest pusta. Bądź pierwszy!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="overflow-x-auto bg-white shadow-md rounded-lg">
+  <table class="min-w-full table-auto">
+    <thead class="bg-gray-50">
+      <tr>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Request</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Akcje</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200">
+      <tr>
+        <td class="px-6 py-4">#102</td>
+        <td class="px-6 py-4 text-sm">Zagraj utwór "Thunderstruck"</td>
+        <td class="px-6 py-4">
+          <span class="px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">Oczekujące</span>
+        </td>
+        <td class="px-6 py-4 space-x-2">
+          <button class="text-green-600 hover:text-green-900 font-bold">Zmień na: Zagrane</button>
+          <button class="text-red-600 hover:text-red-900 font-bold">Usuń</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
